@@ -1,0 +1,534 @@
+// // ---------------- main styles ------------ //
+
+body
+	font: normal 100%/1.5em "Open Sans", Arial, sans-serif
+.clear
+	clear: both
+	height: 0
+.main
+	overflow: hidden
+.header
+	position: relative
+	height: 815px
+	overflow: hidden
+	+max-screen(768)
+		height: 775px
+.header__img
+	position: absolute
+	top: 0
+	left: 0
+	+box-shadow(inset 2000px 1000px rgba(0,0,0, .8))
+.l-container
+	position: relative
+	width: 940px
+	margin: 0 auto
+	+max-screen(768)
+		width: 700px
+	+max-screen(320)
+		width: 290px
+	+clr
+.logo
+	position: relative
+	display: inline-block
+	-webkit-transform: translateX(0px)
+	-moz-transform: translateX(0px)
+	-ms-transform: translateX(0px)
+	-o-transform: translateX(0px)
+	transform: translateX(0px)
+	float: left
+	color: #FFF
+	line-height: 0.9
+	font-size: 17px
+	border: 5px solid #fff
+	padding: 12px 20px
+	margin-top: 40px
+	text-transform: uppercase
+	opacity: 0.9
+	z-index: auto
+
+nav
+	float: right
+	margin-top: 70px
+	padding-right: 30px
+	-webkit-transition: all .5s ease
+	+max-screen(320px)
+		float: none
+		position: relative
+		margin-top: 20px
+		height: 50px
+		padding-right: 0px
+		padding: 30px 0
+		background-color: #00B88B
+		z-index: 9999
+	.open &
+		opacity: 0
+	.close &
+		display: block
+		opacity: 1
+		-webkit-transform: translateX(-20px)
+		+max-screen(320)
+			-webkit-transform: translateY(20px)
+			height: auto
+	ul
+		list-style: none
+		li
+			display: inline
+			+max-screen(320)
+				display: block
+				&:nth-of-type(2)
+					-webkit-transform: translateX(-35px)
+					transform: translateX(-35px)
+			&:first-child
+				display: none
+				-webkit-transform: translateX(-35px)
+				transform: translateX(-35px)
+				+max-screen(320)
+					display: block
+
+		a
+			margin: 0 2px
+			color: #fff
+			font: 18px "Open Sans Semi-Bold", sans-serif
+			text-decoration: none
+			text-transform: uppercase
+			padding: 5px 10px
+			-webkit-perspective: 1000px
+			-moz-perspective: 1000px
+			perspective: 1000px
+			+max-screen(320)
+				display: block
+				font-size: 34px
+				padding: 0
+				text-align: center
+				z-index: 9999
+			span
+				position: relative
+				display: inline-block
+				padding: 2px 14px
+				-webkit-transition: -webkit-transform 0.3s
+				-moz-transition: -moz-transform 0.3s
+				transition: transform 0.3s
+				-webkit-transform-origin: 50% 0
+				-moz-transform-origin: 50% 0
+				transform-origin: 50% 0
+				-webkit-transform-style: preserve-3d
+				-moz-transform-style: preserve-3d
+				transform-style: preserve-3d
+				+max-screen(320px)
+					display: inline-block
+					line-height: 48px
+					z-index: 9999
+					padding: 4px 14px
+				&::before
+					position: absolute
+					top: 100%
+					left: 0
+					width: 100%
+					height: 100%
+					max-heigth: 28px
+					line-height: 28px
+					content: attr(data-hover)
+					text-align: center
+					-webkit-transition: background 0.3s
+					-moz-transition: background 0.3s
+					transition: background 0.3s
+					-webkit-transform: rotateX(-90deg)
+					-moz-transform: rotateX(-90deg)
+					transform: rotateX(-90deg)
+					-webkit-transform-origin: 50% 0
+					-moz-transform-origin: 50% 0
+					transform-origin: 50% 0
+					+max-screen(320px)
+						line-height: 48px
+			&:hover,
+			&:focus
+				span
+					-webkit-transform: rotateX(90deg) translateY(-22px)
+					-moz-transform: rotateX(90deg) translateY(-22px)
+					transform: rotateX(90deg) translateY(-22px)
+					&::before
+						border: 3px solid #fff
+.bt-nav
+	position: absolute
+	right: -8px
+	top: 64px
+	width: 36px
+	height: 36px
+	cursor: pointer
+	z-index: 99999
+	.open &
+		.line1
+			top: 15px
+		.line3
+			top: 23px
+	.close &
+		.line
+			top: 17px
+		.line1
+			-webkit-transform: rotateZ(45deg)
+		.line2
+			opacity: 0
+		.line3
+			-webkit-transform: rotateZ(-45deg)
+	.line
+		position: absolute
+		top: 7px
+		left: 50%
+		width: 24px
+		margin-left: -15px
+		height: 3px
+		background: #fff
+		-webkit-transition: all 0.2s ease
+.header__title
+	font-size: 70px
+	line-height: 70px
+	text-transform: uppercase
+	text-align: center
+	color: #FFF
+	margin: 125px auto 0
+	+max-screen(768px)
+		margin-top: 84px
+	+max-screen(768px)
+		font-size: 30px
+		line-height: 36px
+		margin-top: 20px
+	&::selection
+		color: #000
+		background-color: #fff
+	span
+		color: #00B88B
+		&::selection
+			color: #F3446F
+			background-color: #fff
+.header__item
+	font: 18px "Open Sans Light", sans-serif
+	color: #FFF
+	margin: 16px auto 0
+	text-align: center
+	line-height: 30px
+
+.button
+	display: block
+	background: none
+	border: none
+	width: 220px
+	height: 70px
+	outline: none
+	position: relative
+	margin: 50px auto 0
+	-webkit-tap-highlight-color: rgba(0,0,0,0)
+	-webkit-tap-highlight-color: transparent /* For some Androids */
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+	&:hover
+		.morph-shape svg
+			fill: #F3446F
+			stroke: #F3446F
+
+.button--round
+	width: 150px
+	height: 150px
+.button__text
+	display: block
+	padding: 10px
+	text-align: center
+	position: relative
+	z-index: 100
+	font: 18px "Open Sans Light", sans-serif
+	color: #fff
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+.morph-shape
+	position: absolute
+	width: 100%
+	height: 100%
+	top: 0
+	left: 0
+.button--line .morph-shape svg
+	fill: #00b88b
+	stroke: #00b88b
+	stroke-width: 4px
+	stroke-linecap: round
+	-webkit-transition: all .2s
+	transition: all .2s
+
+
+/* -------------------------  US ------------------ */
+
+.us,
+.work,
+.contact
+	position: relative
+	background-color: #FFF
+	// padding-bottom: 110px
+	+clr
+.title
+	position: relative
+	margin: 108px auto 0px
+	font: 36px "Open Sans Light", sans-serif
+	color: #333
+	letter-spacing: 5px
+	text-align: center
+	text-transform: uppercase
+	+max-screen(768)
+		margin-top: 88px
+	&:after
+		content: ""
+		position: absolute
+		bottom: -22px
+		right: 50%
+		width: 80px
+		height: 3px
+		background-color: #333
+		-webkit-transform: translate(50%)
+		-moz-transform: translate(50%)
+		-ms-transform: translate(50%)
+		-o-transform: translate(50%)
+		transform: translate(50%)
+.us__content
+	color: #333
+	font: 15px "Open Sans", sans-serif
+	line-height: 25px
+	margin: 63px auto 45px
+	text-align: center
+.us__partner
+	+clr
+.partner
+	width: 300px
+	float: left
+	margin: 0 10px 30px
+	text-align: center
+	+max-screen(768px)
+		width: 220px
+		max-height: 255px
+		overflow: hidden
+		margin-bottom: 50px
+	&:first-child
+		margin-left: 0
+	&:last-child
+		margin-right: 0
+	img
+		width: 100px
+		height: 100px
+		-webkit-border-radius: 50%
+		border-radius: 50%
+
+.partner__title
+	font: 20px "Open Sans Semi-bold", sans-serif
+	color: #062033
+	margin: 37px auto 14px
+	letter-spacing: -.8px
+	text-align: center
+	text-transform: uppercase
+.partner__content
+	font: 13px "Open Sans Light", sans-serif
+	color: #062033
+	text-align: center
+	line-height: 24px
+	letter-spacing: -.2px
+
+/* ----------------------------------   WORK        --------------- */
+
+.tab
+	margin: 43px 0 0px
+	letter-spacing: -.8px
+	.is-active
+		color: #333
+	+clr
+.tab__item
+	text-transform: uppercase
+	float: left
+	margin-right: 45px
+	font-size: 14px
+	color: #CCC
+.brand
+	float: left
+	margin-top: 1px
+	+clr
+.f_r
+	float: right
+	margin-left: 20px
+.brand__link
+	position: relative
+	display: block
+	width: 460px
+	height: 260px
+	margin: 23px 0
+	overflow: hidden
+	+max-screen(768px)
+		width: 340px
+		height: 195px
+		margin-bottom: 10px
+	&:after
+		display: none
+		content: ""
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		+box-shadow(inset 2000px 1000px rgba(0,0,0, .8))
+	&:hover::after
+		display: block
+		cursor: url(../img/icons/cursor.png), crosshair
+		+max-screen(768px)
+			cursor: crosshair !important
+.brand__title
+	text-align: center
+	font-size: 15px
+	text-transform: uppercase
+	font-weight: normal
+	color: #060606
+	+ span
+		display: block
+		text-align: center
+		font: 15px "Times New Roman", sans-serif
+		color: #060606
+
+.correction
+	height: 40px
+	+max-screen(768)
+		height: 20px
+/* ------------------   CONTACT   --------------------------------- */
+
+.contact
+	padding-bottom: 40px
+.contact__bg
+	position: absolute
+	top: 50px
+	left: 0
+	margin-top: 90px
+	+clr
+.form
+	margin: 197px auto 0
+	width: 620px
+	+clr
+.form__title
+	margin: 0 auto 25px
+	font: 30px "Open Sans Light", sans-serif
+	color: #FFF
+	text-align: center
+.form__item,
+.form__area
+	width: 250px
+	height: 50px
+	letter-spacing: -.5px
+	font: 15px "Open Sans Light", sans-serif
+	font-style: italic
+	color: #999
+	background: #38383B
+	padding: 0 25px
+.form__area
+	width: 570px
+	height: 100px
+	margin-top: 20px
+	padding: 15px 25px
+	resize: none
+	border: none
+.contact
+	.button
+		margin-top: 31px
+		width: 130px
+		height: 58px
+		&:hover
+			.morph-shape svg
+				fill: #F3446F
+				stroke: #F3446F
+	.button--line .morph-shape svg
+		fill: #6633ff
+		stroke: #6633ff
+.soc
+	margin: 55px auto 0
+	text-align: center
+.soc__link
+	margin-right: 15px
+	&:last-child
+		margin: 0
+.fa
+	font-size: 16px
+	color: #999
+
+/* --------------------------   footer   ---------------------- */
+
+.foo
+	position: relative
+	margin: 107px auto 60px
+	padding-left: 25px
+	float: left
+	width: 780px
+	+max-screen(768px)
+		width: 655px
+		margin: 65px auto 40px
+	+clr
+	&:after
+		display: none
+		content: ""
+		position: absolute
+		bottom: -50px
+		left: 50%
+		width: 50px
+		height: 3px
+		background-color: #482E2E
+		-webkit-transform: translateX(-50%)
+		-moz-transform: translateX(-50%)
+		-ms-transform: translateX(-50%)
+		-o-transform: translateX(-50%)
+		transform: translateX(-50%)
+		+max-screen(768px)
+			display: block
+.foo__adress,
+.foo__mail,
+.foo__tel
+	position: relative
+	float: left
+	&:before
+		content: ""
+		position: absolute
+		top: 5px
+		left: -25px
+		+s(location)
+.foo__adress
+	float: left
+	width: 180px
+	margin-right: 70px
+	ul
+		margin-top: 4px
+	li,
+	a
+		height: 21px
+		color: #333
+		font: 13px "Open Sans Light", sans-serif
+.foo__mail,
+.foo__tel
+	a
+		display: inline-block
+		color: #333
+		font: 13px "Open Sans Light", sans-serif
+.foo__mail
+	width: 145px
+	margin-right: 89px
+	&:before
+		left: -34px
+		+s(mail)
+.foo__tel
+	&:before
+		left: -30px
+		+s(phone)
+.copy
+	float: right
+	margin-top: 107px
+	color: #333
+	font: 13px "Open Sans Light", sans-serif
+	+max-screen(768px)
+		margin: 20px 0 40px
+		float: none
+		display: block
+		text-align: center
